@@ -8,7 +8,7 @@ HTML form submission request with a `Content-Type` header of
 
 Clone the practice from the [starter].
 
-You will be implementing your code in the **server.js** file for all of the
+You will be implementing your code in the __server.js__ file for all of the
 phases.
 
 ## Phases
