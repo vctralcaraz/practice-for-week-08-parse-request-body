@@ -13,6 +13,20 @@ server = http.createServer((req, res) => {
   const url = req.url;
 
   console.log(method, url);
+
+  let reqBody = '';
+
+  req.on('data', (data) => {
+    reqBody += data;
+  });
+
+  req.on('end', () => {
+    if(reqBody.length > 0) {
+      req.body = parseBody(reqBody);
+    }
+
+    sendFormPage(req, res);
+  });
 });
 
 const port = 5000;
